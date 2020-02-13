@@ -1,0 +1,20 @@
+the version i received is 2.3... none of the libraries out there work! help! can someone post the correct library for this version? (2.3)
+A :
+There are two versions of the current 2.13 e-paper, all of which will use the GxGDE0213B72 model later, and the GxGDE0213B1 model has been 
+stopped.he default setting is T GxGDE0213B72. If the old version screen is changed, 
+please change the corresponding header in board_def.h. file
+Answered by Humbugli236 on April 10,2019 Helpful (2)
+
+Hi, I had the same problem. Look at post #1549 on forum.arduino.cc index.php topic=487007.1545
+There is the solution. I used (uncomment) then in the GxEPD2 examples GxEPD2_Example GxEPD2_Example.ino
+the Line
+GxEPD2_BW display(GxEPD2_213_B73(........
+and this works fine.
+
+Verion 2.3 vs. 2.13
+--> current verion uses GxGDE0213B72
+--> older versions used GxGDE0213B1
+--> default setting is T GxGDE0213B72.
+--> Adjust this in board_def.h file
+
+--> Alternatively uncomment "GxEPD2" in GxEPD2_example.uno
